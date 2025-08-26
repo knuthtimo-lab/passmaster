@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1280" height="720" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#f3f4f6"/>
+  <rect x="0" y="0" width="100%" height="60" fill="#3b82f6"/>
+  <text x="50%" y="35" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">PassMaster</text>
+  <text x="50%" y="80" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="16">Desktop Interface</text>
+  <rect x="50" y="120" width="1180" height="200" rx="8" fill="white" stroke="#d1d5db" stroke-width="2"/>
+  <text x="50%" y="150" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="14">Password Generator Interface</text>
+  <rect x="80" y="180" width="1120" height="40" rx="4" fill="#f9fafb" stroke="#d1d5db"/>
+  <text x="50%" y="205" text-anchor="middle" fill="#6b7280" font-family="monospace" font-size="12">••••••••••••••••</text>
+  <rect x="80" y="240" width="120" height="40" rx="4" fill="#3b82f6"/>
+  <text x="140" y="265" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14">Generate</text>
+  <text x="50%" y="690" text-anchor="middle" fill="#9ca3af" font-family="Arial, sans-serif" font-size="12">Screenshot Placeholder</text>
+</svg>
