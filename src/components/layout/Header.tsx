@@ -92,19 +92,19 @@ export function Header() {
               href="/client-side"
               className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 px-3 py-2 rounded-md text-sm font-medium"
             >
-              Sicherheit
+              Security
             </Link>
             <Link
               href="/exclude-similar"
               className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 px-3 py-2 rounded-md text-sm font-medium"
             >
-              Lesbarkeit
+              Readability
             </Link>
             <Link
               href="/privacy"
               className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 px-3 py-2 rounded-md text-sm font-medium"
             >
-              Datenschutz
+              Privacy
             </Link>
             
             {showInstallPrompt && (
@@ -116,7 +116,7 @@ export function Header() {
                 transition={{ duration: 0.3 }}
               >
                 <Download className="h-4 w-4" />
-                <span>App installieren</span>
+                <span>Install App</span>
               </motion.button>
             )}
             
@@ -163,21 +163,21 @@ export function Header() {
                 className="flex items-center justify-center px-3 py-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Client-seitige Sicherheit
+                Client-Side Security
               </Link>
               <Link
                 href="/exclude-similar"
                 className="flex items-center justify-center px-3 py-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Ähnliche Zeichen
+                Similar Characters
               </Link>
               <Link
                 href="/privacy"
                 className="flex items-center justify-center px-3 py-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Datenschutzerklärung
+                Privacy Policy
               </Link>
               
               {showInstallPrompt && (
@@ -186,7 +186,7 @@ export function Header() {
                   className="btn-secondary flex items-center justify-center space-x-2"
                 >
                   <Download className="h-4 w-4" />
-                  <span>App installieren</span>
+                  <span>Install App</span>
                 </button>
               )}
               

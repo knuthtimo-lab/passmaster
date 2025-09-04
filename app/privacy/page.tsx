@@ -29,11 +29,6 @@ export default function PrivacyPage() {
       title: "No Server Storage",
       description: "We don't store any passwords, user data, or personal information on our servers."
     },
-    {
-      icon: Shield,
-      title: "Open Source",
-      description: "All code is publicly available and auditable. You can verify our privacy claims."
-    }
   ]
 
   const dataPractices = [
@@ -229,10 +224,6 @@ export default function PrivacyPage() {
                 </li>
                 <li className="flex items-start space-x-3">
                   <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span><strong>Open Source:</strong> All code is publicly available on GitHub for verification</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
                   <span><strong>No Dependencies:</strong> We don't use external services or third-party libraries that could track you</span>
                 </li>
               </ul>
@@ -254,17 +245,9 @@ export default function PrivacyPage() {
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-6">
               We're committed to transparency. If you have any questions about our privacy practices, 
-              please review our source code or contact us.
+              please contact us.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="https://github.com/your-repo/passmaster"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors"
-              >
-                View Source Code
-              </a>
+            <div className="flex justify-center">
               <Link
                 href="/"
                 className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 dark:border-gray-600 text-base font-medium rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"

@@ -105,10 +105,10 @@ export function PasswordGenerator() {
   }
 
   const getStrengthLevel = (entropy: number) => {
-    if (entropy < 40) return { level: 'Schwach', color: 'strength-weak', bg: 'bg-red-500' }
-    if (entropy < 60) return { level: 'Mittel', color: 'strength-ok', bg: 'bg-yellow-500' }
-    if (entropy < 80) return { level: 'Stark', color: 'strength-strong', bg: 'bg-blue-500' }
-    return { level: 'Sehr Stark', color: 'strength-excellent', bg: 'bg-green-500' }
+    if (entropy < 40) return { level: 'Weak', color: 'strength-weak', bg: 'bg-red-500' }
+    if (entropy < 60) return { level: 'Medium', color: 'strength-ok', bg: 'bg-yellow-500' }
+    if (entropy < 80) return { level: 'Strong', color: 'strength-strong', bg: 'bg-blue-500' }
+    return { level: 'Very Strong', color: 'strength-excellent', bg: 'bg-green-500' }
   }
 
   const entropy = password ? calculateEntropy(password) : 0
@@ -120,7 +120,7 @@ export function PasswordGenerator() {
       {/* Generated Password */}
       <div className="mb-6">
         <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-          Generiertes Passwort
+          Generated Password
         </label>
         <div className="flex space-x-2">
           <div className="flex-1 relative">
@@ -129,13 +129,13 @@ export function PasswordGenerator() {
               value={password}
               readOnly
               className="input-field font-mono text-lg"
-              placeholder="Klicken Sie auf 'Passwort generieren' für ein sicheres Passwort"
-              aria-label="Generiertes Passwort"
+              placeholder="Click 'Generate Password' for a secure password"
+              aria-label="Generated Password"
             />
             <button
               onClick={() => setShowPassword(!showPassword)}
               className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-200"
-              aria-label={showPassword ? 'Passwort verstecken' : 'Passwort anzeigen'}
+              aria-label={showPassword ? 'Hide password' : 'Show password'}
             >
               {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
             </button>
@@ -146,7 +146,7 @@ export function PasswordGenerator() {
             className="px-4 py-3 bg-primary-600 text-white rounded-md hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2 transition-colors duration-200"
             whileHover={{ scale: password ? 1.05 : 1 }}
             whileTap={{ scale: password ? 0.95 : 1 }}
-            aria-label="Passwort kopieren"
+            aria-label="Copy password"
           >
             <AnimatePresence mode="wait">
               {copied ? (
@@ -171,7 +171,7 @@ export function PasswordGenerator() {
                 </motion.div>
               )}
             </AnimatePresence>
-            <span>{copied ? 'Kopiert!' : 'Kopieren'}</span>
+            <span>{copied ? 'Copied!' : 'Copy'}</span>
           </motion.button>
         </div>
         
@@ -179,7 +179,7 @@ export function PasswordGenerator() {
         {password && (
           <div className="mt-4 space-y-2">
             <div className="flex items-center justify-between text-sm">
-              <span className="text-gray-600 dark:text-gray-400">Stärke:</span>
+              <span className="text-gray-600 dark:text-gray-400">Strength:</span>
               <span className={`font-medium ${strength.color.replace('strength-', 'text-')}`}>
                 {strength.level}
               </span>
@@ -194,7 +194,7 @@ export function PasswordGenerator() {
             </div>
             <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400">
               <span>Entropy: {entropy.toFixed(1)} bits</span>
-              <span>Zeit zum Knacken: {timeToCrack}</span>
+              <span>Time to crack: {timeToCrack}</span>
             </div>
           </div>
         )}
@@ -205,7 +205,7 @@ export function PasswordGenerator() {
         {/* Length Slider */}
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-            Passwort-Länge: {options.length}
+            Password Length: {options.length}
           </label>
           <input
             type="range"
@@ -224,12 +224,12 @@ export function PasswordGenerator() {
         {/* Character Options */}
         <div className="grid md:grid-cols-2 gap-4">
           <div className="space-y-3">
-            <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300">Zeichentypen</h3>
+            <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300">Character Types</h3>
             {[
-              { key: 'includeUppercase', label: 'Großbuchstaben (A-Z)' },
-              { key: 'includeLowercase', label: 'Kleinbuchstaben (a-z)' },
-              { key: 'includeNumbers', label: 'Zahlen (0-9)' },
-              { key: 'includeSymbols', label: 'Symbole (!@#$%^&*)' },
+              { key: 'includeUppercase', label: 'Uppercase letters (A-Z)' },
+              { key: 'includeLowercase', label: 'Lowercase letters (a-z)' },
+              { key: 'includeNumbers', label: 'Numbers (0-9)' },
+              { key: 'includeSymbols', label: 'Symbols (!@#$%^&*)' },
             ].map(({ key, label }) => (
               <label key={key} className="flex items-center space-x-2 cursor-pointer">
                 <input
@@ -244,7 +244,7 @@ export function PasswordGenerator() {
           </div>
           
           <div className="space-y-3">
-            <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300">Optionen</h3>
+            <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300">Options</h3>
             <label className="flex items-start space-x-2 cursor-pointer">
               <input
                 type="checkbox"
@@ -253,11 +253,11 @@ export function PasswordGenerator() {
                 className="rounded border-gray-300 text-primary-600 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 mt-0.5"
               />
               <div className="flex-1">
-                <span className="text-sm text-gray-700 dark:text-gray-300">Ähnliche Zeichen ausschließen</span>
+                <span className="text-sm text-gray-700 dark:text-gray-300">Exclude similar characters</span>
                 <div className="flex items-center space-x-1 mt-1">
                   <Info className="h-3 w-3 text-gray-400" />
                   <span className="text-xs text-gray-500 dark:text-gray-400">
-                    Schließt 0/O, l/I, 1/I aus um Verwechslungen zu vermeiden
+                    Excludes 0/O, l/I, 1/I to avoid confusion
                   </span>
                 </div>
               </div>
@@ -274,12 +274,12 @@ export function PasswordGenerator() {
         whileTap={{ scale: 0.98 }}
       >
         <RefreshCw className="h-5 w-5" />
-        <span>Passwort generieren</span>
+        <span>Generate Password</span>
       </motion.button>
 
       {/* ARIA Live Region for Copy Feedback */}
       <div aria-live="polite" className="sr-only">
-        {copied && 'Passwort in Zwischenablage kopiert'}
+        {copied && 'Password copied to clipboard'}
       </div>
     </div>
   )

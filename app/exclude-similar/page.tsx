@@ -17,88 +17,88 @@ export default function ExcludeSimilarPage() {
   const readabilityFeatures = [
     {
       icon: Eye,
-      title: "Ähnliche Zeichen ausschließen",
-      description: "Verwirrende Zeichen wie 0/O, 1/l/I werden automatisch ausgeschlossen, um Lesbarkeit zu verbessern."
+      title: "Exclude Similar Characters",
+      description: "Confusing characters like 0/O, 1/l/I are automatically excluded to improve readability."
     },
     {
       icon: BookOpen,
-      title: "Bessere Lesbarkeit",
-      description: "Passwörter sind leichter zu lesen und zu tippen, ohne die Sicherheit zu beeinträchtigen."
+      title: "Better Readability",
+      description: "Passwords are easier to read and type without compromising security."
     },
     {
       icon: Target,
-      title: "Weniger Fehler",
-      description: "Reduziert Tippfehler beim manuellen Eingeben von Passwörtern erheblich."
+      title: "Fewer Errors",
+      description: "Significantly reduces typing errors when manually entering passwords."
     },
     {
       icon: Users,
-      title: "Benutzerfreundlich",
-      description: "Besonders nützlich für ältere Benutzer oder bei der Eingabe auf mobilen Geräten."
+      title: "User-Friendly",
+      description: "Especially useful for older users or when typing on mobile devices."
     }
   ]
 
   const excludedCharacters = [
     {
-      category: "Zahlen und Buchstaben",
-      characters: ["0 (Null)", "O (Großes O)", "1 (Eins)", "l (kleines L)", "I (Großes i)"],
-      reason: "Diese Zeichen sehen in vielen Schriftarten identisch aus"
+      category: "Numbers and Letters",
+      characters: ["0 (Zero)", "O (Capital O)", "1 (One)", "l (lowercase L)", "I (Capital I)"],
+      reason: "These characters look identical in many fonts"
     },
     {
-      category: "Sonderzeichen",
-      characters: ["| (Pipe)", "` (Backtick)", "' (Apostroph)", "\" (Anführungszeichen)"],
-      reason: "Können in verschiedenen Kontexten verwirrend sein"
+      category: "Special Characters",
+      characters: ["| (Pipe)", "` (Backtick)", "' (Apostrophe)", "\" (Quotation marks)"],
+      reason: "Can be confusing in different contexts"
     },
     {
-      category: "Leerzeichen",
-      characters: [" (Leerzeichen)", "  (Mehrfache Leerzeichen)"],
-      reason: "Können beim Kopieren/Einfügen Probleme verursachen"
+      category: "Spaces",
+      characters: [" (Space)", "  (Multiple spaces)"],
+      reason: "Can cause problems when copying/pasting"
     }
   ]
 
   const benefits = [
     {
       icon: Zap,
-      title: "Schnellere Eingabe",
-      description: "Weniger Verwirrung beim manuellen Tippen von Passwörtern."
+      title: "Faster Input",
+      description: "Less confusion when manually typing passwords."
     },
     {
       icon: CheckCircle,
-      title: "Weniger Fehler",
-      description: "Reduziert Tippfehler und damit verbundene Frustration."
+      title: "Fewer Errors",
+      description: "Reduces typing errors and associated frustration."
     },
     {
       icon: Eye,
-      title: "Bessere UX",
-      description: "Verbessert die Benutzererfahrung ohne Sicherheitsverlust."
+      title: "Better UX",
+      description: "Improves user experience without security loss."
     }
   ]
 
   const securityImpact = [
     {
-      title: "Sicherheit bleibt hoch",
+      title: "Security Remains High",
       items: [
-        "Entropie wird nur minimal reduziert",
-        "Noch immer über 80 Zeichen verfügbar",
-        "Kryptographisch sichere Generierung",
-        "Ausreichend für alle praktischen Zwecke"
+        "Entropy is only minimally reduced",
+        "Still over 80 characters available",
+        "Cryptographically secure generation",
+        "Sufficient for all practical purposes"
       ]
     },
     {
-      title: "Praktische Vorteile",
+      title: "Practical Benefits",
       items: [
-        "Einfachere manuelle Eingabe",
-        "Weniger Support-Anfragen",
-        "Bessere Benutzerakzeptanz",
-        "Reduzierte Fehlerrate"
+        "Easier manual input",
+        "Fewer support requests",
+        "Better user acceptance",
+        "Reduced error rate"
       ]
     },
     {
-      title: "Empfohlene Verwendung",
+      title: "Recommended Usage",
       items: [
-        "Für manuell eingegebene Passwörter",
-        "Bei älteren Benutzern",
-        "Auf mobilen Geräten",
-        "In Umgebungen mit schlechter Sichtbarkeit"
+        "For manually entered passwords",
+        "For older users",
+        "On mobile devices",
+        "In environments with poor visibility"
       ]
     }
   ]
@@ -114,7 +114,7 @@ export default function ExcludeSimilarPage() {
               className="flex items-center text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
             >
               <ArrowLeft className="h-5 w-5 mr-2" />
-              Zurück zu PassMaster
+              Back to PassMaster
             </Link>
           </div>
         </div>
@@ -134,11 +134,11 @@ export default function ExcludeSimilarPage() {
             </div>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            Lesbarkeit & Benutzerfreundlichkeit
+            Readability & User-Friendliness
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Verbessern Sie die Lesbarkeit Ihrer Passwörter ohne Sicherheit zu opfern. 
-            Ähnliche Zeichen werden automatisch ausgeschlossen.
+            Improve the readability of your passwords without sacrificing security. 
+            Similar characters are automatically excluded.
           </p>
         </motion.div>
 
@@ -152,10 +152,10 @@ export default function ExcludeSimilarPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              Lesbarkeits-Features
+              Readability Features
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              Wie PassMaster die Benutzerfreundlichkeit verbessert.
+              How PassMaster improves user-friendliness.
             </p>
           </motion.div>
 
@@ -199,10 +199,10 @@ export default function ExcludeSimilarPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              Ausgeschlossene Zeichen
+              Excluded Characters
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              Diese Zeichen werden automatisch ausgeschlossen, um Verwirrung zu vermeiden.
+              These characters are automatically excluded to avoid confusion.
             </p>
           </motion.div>
 
@@ -245,10 +245,10 @@ export default function ExcludeSimilarPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              Vorteile der Lesbarkeit
+              Benefits of Readability
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              Warum lesbare Passwörter wichtig sind.
+              Why readable passwords are important.
             </p>
           </motion.div>
 
@@ -288,10 +288,10 @@ export default function ExcludeSimilarPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              Sicherheit vs. Lesbarkeit
+              Security vs. Readability
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              Wie wir das perfekte Gleichgewicht finden.
+              How we find the perfect balance.
             </p>
           </motion.div>
 
@@ -331,20 +331,20 @@ export default function ExcludeSimilarPage() {
             className="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-sm border border-gray-200 dark:border-gray-700"
           >
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
-              Beispiel-Vergleich
+              Example Comparison
             </h2>
             
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
                   <XCircle className="h-5 w-5 text-red-500 mr-2" />
-                  Ohne Lesbarkeits-Filter
+                  Without Readability Filter
                 </h3>
                 <div className="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg font-mono text-sm">
-                  <div className="text-red-600 dark:text-red-400 mb-2">Schwer lesbar:</div>
+                  <div className="text-red-600 dark:text-red-400 mb-2">Hard to read:</div>
                   <div>K9mP0lI|nQ2v</div>
                   <div className="text-xs text-gray-500 dark:text-gray-400 mt-2">
-                    Verwirrende Zeichen: 0, l, I, |
+                    Confusing characters: 0, l, I, |
                   </div>
                 </div>
               </div>
@@ -352,13 +352,13 @@ export default function ExcludeSimilarPage() {
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
                   <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                  Mit Lesbarkeits-Filter
+                  With Readability Filter
                 </h3>
                 <div className="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg font-mono text-sm">
-                  <div className="text-green-600 dark:text-green-400 mb-2">Leicht lesbar:</div>
+                  <div className="text-green-600 dark:text-green-400 mb-2">Easy to read:</div>
                   <div>K9mP3nQ2vX7w</div>
                   <div className="text-xs text-gray-500 dark:text-gray-400 mt-2">
-                    Keine verwirrenden Zeichen
+                    No confusing characters
                   </div>
                 </div>
               </div>
@@ -376,24 +376,24 @@ export default function ExcludeSimilarPage() {
             className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-8"
           >
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              Bereit für bessere Lesbarkeit?
+              Ready for Better Readability?
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-6">
-              Aktivieren Sie die Lesbarkeits-Option in PassMaster und generieren Sie 
-              benutzerfreundliche, aber dennoch sichere Passwörter.
+              Enable the readability option in PassMaster and generate 
+              user-friendly, yet secure passwords.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/"
                 className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors"
               >
-                Jetzt ausprobieren
+                Try Now
               </Link>
               <Link
                 href="/client-side"
                 className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 dark:border-gray-600 text-base font-medium rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
               >
-                Sicherheit erfahren
+                Learn About Security
               </Link>
             </div>
           </motion.div>

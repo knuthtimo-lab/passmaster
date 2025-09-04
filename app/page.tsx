@@ -43,8 +43,8 @@ export default function HomePage() {
     },
     {
       icon: Globe,
-      title: "100% Open Source",
-      description: "Transparent code that you can audit, modify, and contribute to on GitHub."
+      title: "100% Privacy-First",
+      description: "Transparent code that you can audit. No tracking, no data collection, no server communication."
     }
   ]
 
@@ -68,7 +68,7 @@ export default function HomePage() {
               Free Offline Secure Password Generator
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Generate strong, unique passwords in seconds — fully client-side, private, and open-source.
+              Generate strong, unique passwords in seconds — fully client-side, private, and secure.
             </p>
           </motion.div>
 

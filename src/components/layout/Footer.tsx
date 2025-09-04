@@ -7,7 +7,7 @@ export function Footer() {
   return (
     <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
@@ -18,7 +18,7 @@ export function Footer() {
             </div>
             <p className="text-sm text-gray-600 dark:text-gray-400 max-w-xs">
               Generate ultra-secure passwords instantly, offline with client-side encryption. 
-              100% open-source, private, and free.
+              100% privacy-first, private, and free.
             </p>
           </div>
 
@@ -63,26 +63,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Open Source */}
-          <div className="space-y-4">
-            <h3 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider">
-              Open Source
-            </h3>
-            <div className="space-y-2">
-              <a 
-                href="https://github.com/your-username/passmaster" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
-              >
-                <Github className="h-4 w-4" />
-                <span>View on GitHub</span>
-              </a>
-              <p className="text-xs text-gray-500 dark:text-gray-500">
-                Licensed under MIT
-              </p>
-            </div>
-          </div>
         </div>
 
         {/* Bottom Bar */}

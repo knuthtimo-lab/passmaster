@@ -1,7 +1,7 @@
 {
-  "name": "PassMaster - Passwort Generator offline, DSGVO-konform",
+  "name": "PassMaster - Free Offline Secure Password Generator",
   "short_name": "PassMaster",
-  "description": "Sichere Passwörter generieren - 100% client-seitig, offline, DSGVO-konform, open-source. Web Crypto API für maximale Sicherheit.",
+  "description": "Generate secure passwords - 100% client-side, offline, GDPR-compliant, privacy-first. Web Crypto API for maximum security.",
   "id": "passmaster-pwa",
   "start_url": "/",
   "display": "standalone",
@@ -9,7 +9,7 @@
   "theme_color": "#3b82f6",
   "orientation": "portrait-primary",
   "scope": "/",
-  "lang": "de",
+  "lang": "en",
   "categories": ["security", "utilities", "productivity", "developer-tools"],
   "prefer_related_applications": false,
   "related_applications": [],
@@ -68,9 +68,9 @@
   ],
   "shortcuts": [
     {
-      "name": "Passwort generieren",
-      "short_name": "Generieren",
-      "description": "Schnell ein neues sicheres Passwort generieren",
+      "name": "Generate Password",
+      "short_name": "Generate",
+      "description": "Quickly generate a new secure password",
       "url": "/#generator",
       "icons": [
         {
@@ -80,9 +80,9 @@
       ]
     },
     {
-      "name": "Offline nutzen",
+      "name": "Use Offline",
       "short_name": "Offline",
-      "description": "Passwörter ohne Internetverbindung generieren",
+      "description": "Generate passwords without internet connection",
       "url": "/offline",
       "icons": [
         {
@@ -92,9 +92,9 @@
       ]
     },
     {
-      "name": "Ähnliche Zeichen ausschließen", 
-      "short_name": "Lesbarkeit",
-      "description": "Passwörter ohne verwirrende ähnliche Zeichen",
+      "name": "Exclude Similar Characters", 
+      "short_name": "Readability",
+      "description": "Passwords without confusing similar characters",
       "url": "/exclude-similar",
       "icons": [
         {

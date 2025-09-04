@@ -5,9 +5,9 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 
 export const metadata: Metadata = {
-  title: 'PassMaster – Passwort Generator offline, open-source | DSGVO-konform',
-  description: 'Kostenlos, offline, client-side: Erstelle sichere Passwörter mit PassMaster. Transparent, DSGVO-konform, Open-Source für maximale Sicherheit.',
-  keywords: ['passwort generator', 'passwort generator offline', 'client-side password generator', 'open source password generator', 'exclude similar characters', 'password generator DSGVO', 'diceware vs random', 'passwort generator DACH', 'password length security', 'passwort generator open source', 'DSGVO', 'Web Crypto API', 'PWA', 'offline', 'client-seitig', 'Datenschutz', 'Sicherheit'],
+  title: 'PassMaster – Free Offline Secure Password Generator | Privacy-First',
+  description: 'Free, offline, client-side: Generate secure passwords with PassMaster. Transparent, GDPR-compliant, privacy-first for maximum security.',
+  keywords: ['password generator', 'password generator offline', 'client-side password generator', 'secure password generator', 'exclude similar characters', 'password generator GDPR', 'diceware vs random', 'password generator privacy', 'password length security', 'password generator secure', 'GDPR', 'Web Crypto API', 'PWA', 'offline', 'client-side', 'privacy', 'security'],
   authors: [{ name: 'PassMaster' }],
   creator: 'PassMaster',
   publisher: 'PassMaster',
@@ -36,8 +36,8 @@ export const metadata: Metadata = {
   },
   manifest: '/manifest.json',
   openGraph: {
-    title: 'PassMaster – Passwort Generator offline, open-source | DSGVO-konform',
-    description: 'Kostenlos, offline, client-side: Erstelle sichere Passwörter mit PassMaster. Transparent, DSGVO-konform, Open-Source für maximale Sicherheit.',
+    title: 'PassMaster – Free Offline Secure Password Generator | Privacy-First',
+    description: 'Free, offline, client-side: Generate secure passwords with PassMaster. Transparent, GDPR-compliant, privacy-first for maximum security.',
     url: '/',
     siteName: 'PassMaster',
     images: [
@@ -45,16 +45,16 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'PassMaster - Sicherer Passwort Generator',
+        alt: 'PassMaster - Secure Password Generator',
       },
     ],
-    locale: 'de_DE',
+    locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PassMaster – Passwort Generator offline, open-source',
-    description: 'Kostenlos, offline, client-side: Erstelle sichere Passwörter mit PassMaster. Transparent, DSGVO-konform, Open-Source.',
+    title: 'PassMaster – Free Offline Secure Password Generator',
+    description: 'Free, offline, client-side: Generate secure passwords with PassMaster. Transparent, GDPR-compliant, privacy-first.',
     images: ['/og-image.png'],
   },
   robots: {
@@ -126,18 +126,18 @@ export default function RootLayout({
               {
                 "@context": "https://schema.org",
                 "@type": "SoftwareApplication",
-                "name": "PassMaster Passwort Generator",
-                "description": "100% client-seitiger, offline-fähiger, PWA Passwort Generator. Kostenlos, Open-Source, DSGVO-konform für maximale Sicherheit und Datenschutz.",
+                "name": "PassMaster Password Generator",
+                "description": "100% client-side, offline-capable, PWA password generator. Free, privacy-first, GDPR-compliant for maximum security and privacy.",
                 "applicationCategory": "SecurityApplication",
                 "operatingSystem": "Web, PWA",
                 "featureList": [
-                  "Web Crypto API für kryptografische Sicherheit",
-                  "offline-fähig mit Service Worker",
-                  "exclude similar characters Funktion",
-                  "open-source und auditierbar",
-                  "keine Serverübertragung",
-                  "DSGVO-konform",
-                  "Client-seitige Verschlüsselung",
+                  "Web Crypto API for cryptographic security",
+                  "offline-capable with Service Worker",
+                  "exclude similar characters function",
+                  "transparent and auditable",
+                  "no server transmission",
+                  "GDPR-compliant",
+                  "Client-side encryption",
                   "Progressive Web App (PWA)"
                 ],
                 "offers": {
@@ -159,7 +159,7 @@ export default function RootLayout({
                   (process.env.NEXT_PUBLIC_SITE_URL || "https://passmaster.app") + "/screenshots/desktop.png",
                   (process.env.NEXT_PUBLIC_SITE_URL || "https://passmaster.app") + "/screenshots/mobile.png"
                 ],
-                "keywords": "passwort generator, offline, client-side, DSGVO, Web Crypto API, PWA, open source, sicherheit, datenschutz"
+                "keywords": "password generator, offline, client-side, GDPR, Web Crypto API, PWA, privacy-first, security, privacy"
               },
               {
                 "@context": "https://schema.org",
@@ -178,7 +178,7 @@ export default function RootLayout({
                   "contactType": "customer service"
                 },
                 "foundingDate": "2024",
-                "description": "Open-Source Passwort Generator für maximale Sicherheit und Datenschutz"
+                "description": "Privacy-first password generator for maximum security and privacy"
               },
               {
                 "@context": "https://schema.org",

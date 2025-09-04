@@ -32,11 +32,6 @@ export default function ClientSidePage() {
       title: "Zero Data Storage",
       description: "We don't store any passwords, user data, or personal information. Everything is processed locally and immediately discarded."
     },
-    {
-      icon: Shield,
-      title: "Open Source Verification",
-      description: "All code is publicly available and auditable. You can verify our security claims by reviewing the source code."
-    }
   ]
 
   const technicalDetails = [
@@ -98,7 +93,7 @@ export default function ClientSidePage() {
               className="flex items-center text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
             >
               <ArrowLeft className="h-5 w-5 mr-2" />
-              Zurück zu PassMaster
+              Back to PassMaster
             </Link>
           </div>
         </div>
@@ -118,10 +113,10 @@ export default function ClientSidePage() {
             </div>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            Client-Side Sicherheit
+            Client-Side Security
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Maximale Sicherheit durch lokale Verarbeitung. Ihre Passwörter werden ausschließlich in Ihrem Browser generiert und verlassen niemals Ihr Gerät.
+            Maximum security through local processing. Your passwords are generated exclusively in your browser and never leave your device.
           </p>
         </motion.div>
 
@@ -135,14 +130,14 @@ export default function ClientSidePage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              Sicherheits-Features
+              Security Features
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              Jeder Aspekt von PassMaster ist darauf ausgelegt, Ihre Sicherheit zu maximieren.
+              Every aspect of PassMaster is designed to maximize your security.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {securityFeatures.map((feature, index) => (
               <motion.div
                 key={feature.title}
@@ -182,10 +177,10 @@ export default function ClientSidePage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              Warum Client-Side Sicherheit?
+              Why Client-Side Security?
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              Die Vorteile der lokalen Passwort-Generierung.
+              The benefits of local password generation.
             </p>
           </motion.div>
 
@@ -225,10 +220,10 @@ export default function ClientSidePage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              Technische Details
+              Technical Details
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              Wie PassMaster Ihre Sicherheit gewährleistet.
+              How PassMaster ensures your security.
             </p>
           </motion.div>
 
@@ -270,28 +265,24 @@ export default function ClientSidePage() {
             <div className="flex items-center mb-6">
               <FileText className="h-8 w-8 text-green-600 mr-3" />
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-                Technische Implementierung
+                Technical Implementation
               </h2>
             </div>
             
             <div className="prose dark:prose-invert max-w-none">
-              <h3 className="text-lg font-semibold mb-4">Wie PassMaster funktioniert</h3>
+              <h3 className="text-lg font-semibold mb-4">How PassMaster Works</h3>
               <ul className="space-y-3 text-gray-600 dark:text-gray-300">
                 <li className="flex items-start space-x-3">
                   <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span><strong>Lokale Verarbeitung:</strong> Alle Passwort-Generierung erfolgt in Ihrem Browser mit JavaScript</span>
+                  <span><strong>Local Processing:</strong> All password generation happens in your browser using JavaScript</span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span><strong>Keine Netzwerk-Anfragen:</strong> Die App funktioniert nach dem ersten Laden vollständig offline</span>
+                  <span><strong>No Network Requests:</strong> The app works completely offline after initial load</span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span><strong>Open Source:</strong> Der gesamte Code ist öffentlich auf GitHub verfügbar zur Überprüfung</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span><strong>Keine Abhängigkeiten:</strong> Wir verwenden keine externen Services oder Drittanbieter-Bibliotheken</span>
+                  <span><strong>No Dependencies:</strong> We don't use external services or third-party libraries</span>
                 </li>
               </ul>
             </div>
@@ -308,26 +299,18 @@ export default function ClientSidePage() {
             className="bg-green-50 dark:bg-green-900/20 rounded-lg p-8"
           >
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              Fragen zur Sicherheit?
+              Questions About Security?
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-6">
-              Wir sind verpflichtet zu Transparenz. Wenn Sie Fragen zu unseren Sicherheitspraktiken haben, 
-              überprüfen Sie unseren Quellcode oder kontaktieren Sie uns.
+              We are committed to transparency. If you have questions about our security practices, 
+              please contact us.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="https://github.com/your-repo/passmaster"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition-colors"
-              >
-                Quellcode ansehen
-              </a>
+            <div className="flex justify-center">
               <Link
                 href="/"
                 className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 dark:border-gray-600 text-base font-medium rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
               >
-                Zum Generator
+                Back to Generator
               </Link>
             </div>
           </motion.div>
