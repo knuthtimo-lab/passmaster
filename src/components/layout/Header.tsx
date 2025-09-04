@@ -40,7 +40,25 @@ export function Header() {
   }
 
   if (!mounted) {
-    return null
+    return (
+      <header className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center space-x-2">
+              <Shield className="h-8 w-8 text-primary-600" />
+              <span className="text-xl font-bold text-gray-900 dark:text-white">
+                PassMaster
+              </span>
+            </div>
+            <div className="hidden md:flex items-center space-x-4">
+              <div className="w-20 h-8 bg-gray-200 dark:bg-gray-700 rounded animate-pulse"></div>
+              <div className="w-20 h-8 bg-gray-200 dark:bg-gray-700 rounded animate-pulse"></div>
+              <div className="w-8 h-8 bg-gray-200 dark:bg-gray-700 rounded animate-pulse"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+    )
   }
 
   return (
@@ -65,10 +83,28 @@ export function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-4">
             <Link
+              href="/offline"
+              className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 px-3 py-2 rounded-md text-sm font-medium"
+            >
+              Offline
+            </Link>
+            <Link
+              href="/client-side"
+              className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 px-3 py-2 rounded-md text-sm font-medium"
+            >
+              Sicherheit
+            </Link>
+            <Link
+              href="/exclude-similar"
+              className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 px-3 py-2 rounded-md text-sm font-medium"
+            >
+              Lesbarkeit
+            </Link>
+            <Link
               href="/privacy"
               className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 px-3 py-2 rounded-md text-sm font-medium"
             >
-              Privacy
+              Datenschutz
             </Link>
             
             {showInstallPrompt && (
@@ -80,7 +116,7 @@ export function Header() {
                 transition={{ duration: 0.3 }}
               >
                 <Download className="h-4 w-4" />
-                <span>Install App</span>
+                <span>App installieren</span>
               </motion.button>
             )}
             
@@ -116,11 +152,32 @@ export function Header() {
           >
             <div className="flex flex-col space-y-3">
               <Link
+                href="/offline"
+                className="flex items-center justify-center px-3 py-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Offline PWA
+              </Link>
+              <Link
+                href="/client-side"
+                className="flex items-center justify-center px-3 py-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Client-seitige Sicherheit
+              </Link>
+              <Link
+                href="/exclude-similar"
+                className="flex items-center justify-center px-3 py-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Ähnliche Zeichen
+              </Link>
+              <Link
                 href="/privacy"
                 className="flex items-center justify-center px-3 py-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Privacy Policy
+                Datenschutzerklärung
               </Link>
               
               {showInstallPrompt && (
@@ -129,7 +186,7 @@ export function Header() {
                   className="btn-secondary flex items-center justify-center space-x-2"
                 >
                   <Download className="h-4 w-4" />
-                  <span>Install App</span>
+                  <span>App installieren</span>
                 </button>
               )}
               

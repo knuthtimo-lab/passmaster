@@ -44,18 +44,18 @@ export default function HomePage() {
   const features = [
     {
       icon: Lock,
-      title: "End-to-End Client-Side Encryption",
-      description: "Your passwords are generated locally in your browser. Nothing is ever sent to our servers."
+      title: "100% Client-seitige Verschlüsselung",
+      description: "Ihre Passwörter werden lokal in Ihrem Browser generiert. Nichts wird jemals an unsere Server gesendet. Web Crypto API für maximale Sicherheit."
     },
     {
       icon: Zap,
-      title: "Works Offline (PWA)",
-      description: "Install as an app and generate passwords even without an internet connection."
+      title: "Funktioniert offline (PWA)",
+      description: "Als App installieren und Passwörter auch ohne Internetverbindung generieren. Service Worker für echte Offline-Nutzung."
     },
     {
       icon: Globe,
-      title: "100% Open Source",
-      description: "Transparent code that you can audit, modify, and contribute to on GitHub."
+      title: "100% Open Source & DSGVO-konform",
+      description: "Transparenter, auditierbarer Code auf GitHub. Vollständig DSGVO-konform ohne Datenübertragung oder Tracking."
     }
   ]
 
@@ -76,10 +76,10 @@ export default function HomePage() {
               </div>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-              Free Offline Secure Password Generator
+              Passwort Generator für maximale Sicherheit
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Generate strong, unique passwords in seconds — fully client-side, private, and open-source.
+              Sichere Passwörter generieren – 100% client-seitig, offline, DSGVO-konform und Open-Source.
             </p>
           </motion.div>
 
@@ -95,7 +95,7 @@ export default function HomePage() {
               className="btn-primary text-lg px-8 py-4 inline-flex items-center space-x-2"
             >
               <Key className="h-5 w-5" />
-              <span>Generate Password</span>
+              <span>Passwort generieren</span>
             </a>
           </motion.div>
         </div>
@@ -112,10 +112,10 @@ export default function HomePage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Why PassMaster is Safer
+              Web Crypto statt Math.random | Offline & PWA | DSGVO-Check
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Built with privacy and security as the foundation, not an afterthought.
+              Entwickelt mit Datenschutz und Sicherheit als Fundament – nicht als nachträglicher Gedanke.
             </p>
           </motion.div>
 
@@ -158,10 +158,10 @@ export default function HomePage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Generate Your Strong Password
+              Ihr starkes Passwort generieren
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              Customize your password settings and generate secure passwords instantly.
+              Passen Sie Ihre Passwort-Einstellungen an und generieren Sie sofort sichere Passwörter.
             </p>
           </motion.div>
 
@@ -180,10 +180,10 @@ export default function HomePage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Frequently Asked Questions
+              Häufig gestellte Fragen
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              Everything you need to know about PassMaster and password security.
+              Alles was Sie über PassMaster und Passwort-Sicherheit wissen müssen.
             </p>
           </motion.div>
 

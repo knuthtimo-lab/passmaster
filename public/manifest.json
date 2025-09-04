@@ -1,7 +1,7 @@
 {
-  "name": "PassMaster - Free Offline Secure Password Generator",
+  "name": "PassMaster - Passwort Generator offline, DSGVO-konform",
   "short_name": "PassMaster",
-  "description": "Generate ultra-secure passwords instantly, offline with client-side encryption. 100% open-source, private, and free.",
+  "description": "Sichere Passwörter generieren - 100% client-seitig, offline, DSGVO-konform, open-source. Web Crypto API für maximale Sicherheit.",
   "id": "passmaster-pwa",
   "start_url": "/",
   "display": "standalone",
@@ -9,7 +9,7 @@
   "theme_color": "#3b82f6",
   "orientation": "portrait-primary",
   "scope": "/",
-  "lang": "en",
+  "lang": "de",
   "categories": ["security", "utilities", "productivity", "developer-tools"],
   "prefer_related_applications": false,
   "related_applications": [],
@@ -68,9 +68,9 @@
   ],
   "shortcuts": [
     {
-      "name": "Generate Password",
-      "short_name": "Generate",
-      "description": "Quickly generate a new secure password",
+      "name": "Passwort generieren",
+      "short_name": "Generieren",
+      "description": "Schnell ein neues sicheres Passwort generieren",
       "url": "/#generator",
       "icons": [
         {
@@ -80,10 +80,22 @@
       ]
     },
     {
-      "name": "Password History",
-      "short_name": "History",
-      "description": "View recently generated passwords",
-      "url": "/#history",
+      "name": "Offline nutzen",
+      "short_name": "Offline",
+      "description": "Passwörter ohne Internetverbindung generieren",
+      "url": "/offline",
+      "icons": [
+        {
+          "src": "/icons/icon-96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Ähnliche Zeichen ausschließen", 
+      "short_name": "Lesbarkeit",
+      "description": "Passwörter ohne verwirrende ähnliche Zeichen",
+      "url": "/exclude-similar",
       "icons": [
         {
           "src": "/icons/icon-96.png",
