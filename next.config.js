@@ -5,6 +5,9 @@ const nextConfig = {
   images: {
     domains: [],
   },
+  env: {
+    NEXT_PUBLIC_ADSENSE_CLIENT: process.env.NEXT_PUBLIC_ADSENSE_CLIENT,
+  },
 };
 
 module.exports = nextConfig;

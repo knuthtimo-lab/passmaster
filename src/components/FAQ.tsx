@@ -53,6 +53,8 @@ export function FAQ() {
 
   const toggleItem = (index: number) => {
     const newOpenItems = new Set(openItems)
+    const isOpening = !newOpenItems.has(index)
+    
     if (newOpenItems.has(index)) {
       newOpenItems.delete(index)
     } else {

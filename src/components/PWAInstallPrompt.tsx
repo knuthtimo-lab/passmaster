@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { X, Download, Smartphone } from 'lucide-react';
+// No analytics needed
 
 export function PWAInstallPrompt() {
   const [showPrompt, setShowPrompt] = useState(false);
@@ -17,6 +18,7 @@ export function PWAInstallPrompt() {
 
     // Listen for beforeinstallprompt event
     const handleBeforeInstallPrompt = (e: Event) => {
+      console.log('beforeinstallprompt event fired');
       e.preventDefault();
       setDeferredPrompt(e);
       setShowPrompt(true);
@@ -32,17 +34,24 @@ export function PWAInstallPrompt() {
   const handleInstall = async () => {
     if (!deferredPrompt) return;
 
-    deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-    
-    if (outcome === 'accepted') {
-      console.log('User accepted the install prompt');
-    } else {
-      console.log('User dismissed the install prompt');
+    try {
+      // Show the install prompt
+      deferredPrompt.prompt();
+      
+      // Wait for the user to respond to the prompt
+      const { outcome } = await deferredPrompt.userChoice;
+      
+      if (outcome === 'accepted') {
+        console.log('User accepted the install prompt');
+      } else {
+        console.log('User dismissed the install prompt');
+      }
+    } catch (error) {
+      console.error('Error showing install prompt:', error);
+    } finally {
+      setDeferredPrompt(null);
+      setShowPrompt(false);
     }
-    
-    setDeferredPrompt(null);
-    setShowPrompt(false);
   };
 
   const handleDismiss = () => {
@@ -61,10 +70,10 @@ export function PWAInstallPrompt() {
           </div>
           <div className="flex-1">
             <h3 className="text-sm font-medium text-gray-900 dark:text-white">
-              Install PassMaster
+              📱 Install PassMaster PWA
             </h3>
             <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-              Get quick access to secure password generation
+              Offline access + optimized experience. Ads support our free service.
             </p>
           </div>
         </div>

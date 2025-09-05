@@ -24,9 +24,37 @@ import { PasswordGenerator } from '@/components/PasswordGenerator'
 import { FAQ } from '@/components/FAQ'
 import { FloatingCTA } from '@/components/FloatingCTA'
 import { PWAInstallPrompt } from '@/components/PWAInstallPrompt'
+import { PWAResponsiveAd, PWABannerAd, PWASquareAd } from '@/components/PWAAdSense'
 
 export default function HomePage() {
   const [showScrollTop, setShowScrollTop] = useState(false)
+  
+  // Initialize AdSense on page load
+  useEffect(() => {
+    console.log('%c🎯 HOMEPAGE USEEFFECT RUNNING', 'background: red; color: white; font-size: 16px;')
+    console.log('🔍 Looking for AdSense components...')
+    
+    // Check if AdSense components are rendered
+    setTimeout(() => {
+      const adContainers = document.querySelectorAll('.adsense-container')
+      console.log(`%c📊 Found ${adContainers.length} AdSense containers on page`, 'background: green; color: white;')
+      
+      adContainers.forEach((container, index) => {
+        console.log(`Ad ${index + 1}:`, container.querySelector('.text-sm')?.textContent)
+      })
+      
+      // Also check for any divs with "Ad" in them
+      const allDivs = document.querySelectorAll('div')
+      let adDivs = 0
+      allDivs.forEach(div => {
+        if (div.textContent?.includes('Ad Placement') || div.textContent?.includes('AdSense')) {
+          adDivs++
+          console.log('Found ad-related div:', div.textContent)
+        }
+      })
+      console.log(`Total ad-related divs found: ${adDivs}`)
+    }, 1000)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,8 +82,8 @@ export default function HomePage() {
     },
     {
       icon: Globe,
-      title: "100% Open Source & DSGVO-konform",
-      description: "Transparenter, auditierbarer Code auf GitHub. Vollständig DSGVO-konform ohne Datenübertragung oder Tracking."
+      title: "Open Source & Privacy-Focused",
+      description: "Transparenter, auditierbarer Code auf GitHub. DSGVO-konform mit optionalen Analytics zur Verbesserung des Services."
     }
   ]
 
@@ -64,6 +92,20 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
+          <div style={{
+            background: 'linear-gradient(45deg, red, blue)', 
+            color: 'white', 
+            padding: '40px', 
+            fontSize: '32px', 
+            textAlign: 'center', 
+            marginBottom: '40px',
+            border: '10px solid yellow',
+            borderRadius: '20px'
+          }}>
+            🚨🚨🚨 MEGA TEST - SIEHST DU DAS??? 🚨🚨🚨<br/>
+            WENN JA: Claude Code funktioniert!<br/>
+            WENN NEIN: Du schaust falsche Seite!
+          </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -76,11 +118,25 @@ export default function HomePage() {
               </div>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-              Passwort Generator für maximale Sicherheit
+              🔴 TEST: Passwort Generator für maximale Sicherheit
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Sichere Passwörter generieren – 100% client-seitig, offline, DSGVO-konform und Open-Source.
             </p>
+          </motion.div>
+
+          {/* High-Impact Top Banner Ad */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mb-8"
+          >
+            <div className="bg-red-100 border-2 border-red-500 p-4 text-center mb-4">
+              <h3 className="text-red-800 font-bold">SIMPLE TEST AD PLACEMENT</h3>
+              <p className="text-red-600">If you see this, JSX rendering works</p>
+            </div>
+            <PWABannerAd className="mx-auto" />
           </motion.div>
 
           {/* Primary CTA */}
@@ -119,17 +175,32 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-                className="card text-center group cursor-pointer"
-              >
+          <div className="grid md:grid-cols-4 gap-8">
+            {/* Left Sidebar Ad */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="hidden md:block"
+            >
+              <div className="sticky top-8">
+                <PWASquareAd className="mx-auto" />
+              </div>
+            </motion.div>
+            
+            {/* Features Content */}
+            <div className="md:col-span-2 grid gap-8">
+              {features.map((feature, index) => (
+                <motion.div
+                  key={feature.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5 }}
+                  className="card text-center group cursor-pointer"
+                >
                 <div className="flex justify-center mb-4">
                   <div className="p-3 bg-primary-100 dark:bg-primary-900/20 rounded-full group-hover:bg-primary-200 dark:group-hover:bg-primary-900/40 transition-colors duration-200">
                     <feature.icon className="h-8 w-8 text-primary-600" />
@@ -142,7 +213,21 @@ export default function HomePage() {
                   {feature.description}
                 </p>
               </motion.div>
-            ))}
+              ))}
+            </div>
+            
+            {/* Right Sidebar Ad */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="hidden md:block"
+            >
+              <div className="sticky top-8">
+                <PWASquareAd className="mx-auto" />
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -166,6 +251,16 @@ export default function HomePage() {
           </motion.div>
 
           <PasswordGenerator />
+          
+          {/* High-Converting Ad after Generator */}
+          <div className="mt-12 mb-8">
+            <PWAResponsiveAd className="mx-auto" />
+          </div>
+          
+          {/* Secondary Banner for Mobile Users */}
+          <div className="mt-8 md:hidden">
+            <PWABannerAd className="mx-auto" />
+          </div>
         </div>
       </section>
 
@@ -188,6 +283,16 @@ export default function HomePage() {
           </motion.div>
 
           <FAQ />
+          
+          {/* Bottom High-Impact Ad */}
+          <div className="mt-12 mb-8">
+            <PWABannerAd className="mx-auto" />
+          </div>
+          
+          {/* Final Conversion Ad */}
+          <div className="mt-8">
+            <PWAResponsiveAd className="mx-auto" />
+          </div>
         </div>
       </section>
 

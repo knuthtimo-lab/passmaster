@@ -81,6 +81,7 @@ export function PasswordGenerator() {
     const newPassword = generatePassword(options)
     setPassword(newPassword)
     setCopied(false)
+    
   }
 
   const handleCopy = async () => {

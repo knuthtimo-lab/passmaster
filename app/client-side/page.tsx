@@ -56,10 +56,10 @@ export default function ClientSidePage() {
     {
       title: "Privacy Protection",
       items: [
-        "No user tracking or analytics",
-        "No cookies or local storage",
-        "No third-party services",
-        "No data collection whatsoever"
+        "Privacy-focused analytics (optional)",
+        "Cookie consent controls",
+        "Minimal trusted third-party services",
+        "Transparent data collection practices"
       ]
     }
   ]
@@ -282,7 +282,7 @@ export default function ClientSidePage() {
                 </li>
                 <li className="flex items-start space-x-3">
                   <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span><strong>No Dependencies:</strong> We don't use external services or third-party libraries</span>
+                  <span><strong>Minimal Dependencies:</strong> We only use trusted services for analytics and advertising (with your consent)</span>
                 </li>
               </ul>
             </div>

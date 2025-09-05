@@ -3,6 +3,8 @@ import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
+import { PWAInstallPrompt } from '@/components/PWAInstallPrompt'
+import { CookieConsent } from '@/components/CookieConsent'
 
 export const metadata: Metadata = {
   title: 'PassMaster – Free Offline Secure Password Generator | Privacy-First',
@@ -96,18 +98,77 @@ export default function RootLayout({
         <link rel="alternate" hrefLang="x-default" href="/" />
         
         {/* Content Security Policy */}
-        <meta httpEquiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'; font-src 'self'; object-src 'none'; media-src 'self'; frame-src 'none';" />
+        <meta httpEquiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://googletagmanager.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: https://pagead2.googlesyndication.com https://tpc.googlesyndication.com; connect-src 'self' https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com; font-src 'self' https://fonts.gstatic.com; object-src 'none'; media-src 'self'; frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com;" />
         <meta httpEquiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=()" />
         
-        {/* Service Worker Registration */}
+        {/* Google AdSense */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX"
+          crossOrigin="anonymous"
+        />
+        
+        {/* PWA Service Worker with AdSense Support */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              if ('serviceWorker' in navigator) {
+              console.log('%c🚀 PWA + AdSense Mode Activated', 'background: blue; color: white; font-size: 16px;');
+              
+              // Register service worker with AdSense support
+              if ('serviceWorker' in navigator && (window.location.hostname !== 'localhost')) {
                 window.addEventListener('load', function() {
                   navigator.serviceWorker.register('/sw.js')
                     .then(function(registration) {
+                      console.log('✅ PWA ServiceWorker registered with AdSense support:', registration);
+                      
+                      // Force update if there's a new service worker
+                      if (registration.waiting) {
+                        registration.waiting.postMessage({type: 'SKIP_WAITING'});
+                      }
+                      
+                      // Listen for updates
+                      registration.addEventListener('updatefound', () => {
+                        const newWorker = registration.installing;
+                        if (newWorker) {
+                          newWorker.addEventListener('statechange', () => {
+                            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                              console.log('🔄 New PWA version available, reloading...');
+                              window.location.reload();
+                            }
+                          });
+                        }
+                      });
+                    })
+                    .catch(function(registrationError) {
+                      console.log('❌ PWA ServiceWorker registration failed:', registrationError);
+                    });
+                });
+              } else {
+                console.log('🔧 Development mode - ServiceWorker disabled');
+              }
+                  
+                  navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
                       console.log('SW registered: ', registration);
+                      
+                      // Force update if there's a new service worker
+                      if (registration.waiting) {
+                        console.log('New service worker waiting, forcing update...');
+                        registration.waiting.postMessage({type: 'SKIP_WAITING'});
+                      }
+                      
+                      // Listen for updates
+                      registration.addEventListener('updatefound', () => {
+                        const newWorker = registration.installing;
+                        if (newWorker) {
+                          newWorker.addEventListener('statechange', () => {
+                            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                              console.log('New service worker installed, reloading...');
+                              window.location.reload();
+                            }
+                          });
+                        }
+                      });
                     })
                     .catch(function(registrationError) {
                       console.log('SW registration failed: ', registrationError);
@@ -117,6 +178,7 @@ export default function RootLayout({
             `,
           }}
         />
+        
         
         {/* Enhanced JSON-LD Schema */}
         <script
@@ -215,6 +277,8 @@ export default function RootLayout({
               {children}
             </main>
             <Footer />
+            <PWAInstallPrompt />
+            <CookieConsent />
           </div>
         </ThemeProvider>
       </body>
